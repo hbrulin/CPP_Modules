@@ -14,8 +14,13 @@ int main()
     cout << "What is your name?" << endl;
     getline(cin, yourName);
     cout << "hello " << yourName << endl;
-    //cout << "Size of your name " << yourName.size << endl;
-    //cout << "Is string empty " << yourName.empty << endl;
-    //cout << yourName.append(" is your name") << endl;
+    cout << "Size of your name " << yourName.size() << endl;
+    cout << "Is string empty " << yourName.empty() << endl;
+    cout << yourName.append(" is your name") << endl;
+    yourName.erase();
+    cout << "where are you " << yourName << endl;
+    yourName = "i'm back";
+    //yourName.substr(3, 3);
+    cout << "hello " << yourName << endl;
     return (0);
 }
