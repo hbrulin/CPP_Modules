@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "gun.hpp"
 
 class Player
 {
@@ -10,8 +11,7 @@ class Player
 
     int m_life;
     int m_mana;
-    std::string m_gun;
-    int m_damageGun;
+    Gun m_gun;
 
     public: 
 
@@ -23,6 +23,7 @@ class Player
     void    getPotion(int quantity);
     void    changeGun(std::string gun, int damage);
     bool    isAlive()const;
+    void    printState()const;
 };
 
 #endif

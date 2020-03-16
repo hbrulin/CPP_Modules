@@ -92,6 +92,11 @@ Un destructeur est une méthode qui commence par un tilde (~) suivi du nom de la
 Un destructeur ne renvoie aucune valeur, pas mêmevoid(comme le constructeur).
 Le destructeur ne peut prendre aucun paramètre. Il y a donc toujours un seul destructeur, il ne peut pas être surchargé.
 
+#Méthodes constantes
+Méthodes de lecture seules. La méthode ne modifie la valeur d'aucun attribut : méthode d'affichage.
+
+#Associer des classes entre elles
+Si j'ai une classe utilisée par une autre classe, je ne pourrais pas à partir de cette autre classe utiliser les attributs de la première, car ceux-ci sont privés. Je dois créer une nouvelle méthode appelée accesseur. 
 
 #.hpp
 recommandé de ne pas utiliser le "using namespace" dans un .hpp, pour éviter confusions.

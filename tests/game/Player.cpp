@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include "gun.hpp"
 using namespace std;
 
 //constructeur par défaut
@@ -6,8 +7,7 @@ Player::Player()
 {
     m_life = 100;
     m_mana = 100;
-    m_gun = "Smith & Wesson";
-    m_damageGun = 20;
+    //pas besoin d'initiliser m_gun, c'est le constructeur de la classe Gun qui va le faire.
 }
 
 /*Autre possibilité en liste d'utilisation:
@@ -18,7 +18,7 @@ Player::Player() : m_life(100), m_mana(100), m_gun("Smith & Wesson"), m_damageGu
 */
 
 //surcharge, deuxieme constructeur
-Player::Player(string gun, int damage) : m_life(100), m_mana(100), m_gun(gun), m_damageGun(damage)
+Player::Player(string gun, int damage) : m_life(100), m_mana(100), m_gun(gun, damage)
 {
 
 }
@@ -40,7 +40,7 @@ void    Player::getDamage(int nb)
 void    Player::attack(Player &target) //On reçoit en paramètre une référence vers un objet de type Player. Pointeur possible aussi.
 {
 
-    target.getDamage(m_damageGun);
+    target.getDamage(m_gun.getDamage());
 
 }
 
@@ -54,8 +54,7 @@ void    Player::getPotion(int quantity)
 
 void    Player::changeGun(std::string gun, int damage)
 {
-    m_gun = gun;
-    m_damageGun = damage;
+    m_gun.change(gun, damage);
 }
 
 bool    Player::isAlive()const
@@ -65,4 +64,10 @@ bool    Player::isAlive()const
     else
         return false;*/
     return (m_life > 0); //renvoie true si m_life > 0, 0 sinon.
+}
+
+void    Player::printState()const
+{
+    cout << "Life : " << m_life << " ";
+    m_gun.print();
 }
