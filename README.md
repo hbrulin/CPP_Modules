@@ -168,8 +168,17 @@ Si j'ai deux fonctions avec le même nom chez une classe mère et une classe fil
 Si la fonction de la fille a juste qqs ajouts par rapport à celle de la mère, on peut préciser d'appeler la fonction de la mère puis écrire dessous le nouveau code. 
 Voir la fonction introduction dans le sous-dir héritage. 
 
+#string::size_type
+The std::string type defines size_type to be the name of the appropriate type for holding the number of characters in a string. Whenever we need a local variable to contain the size of a string, we should use std::string::size_type as the type of that variable.
+The reason that we have given cols a type of std::string::size_type is to ensure that cols is capable of containing the number of characters in the string, no matter how large that number might be. We could simply have said that cols has type int, and indeed, doing so would probably work. However, the value of cols depends on the size of the input to our program, and we have no control over how long that input might be. It is conceivable that someone might give our program a string so long that an int is insufficient to contain its length.
+
+-> https://stackoverflow.com/questions/1181079/stringsize-type-instead-of-int
+
 #Compilation:
-- avec g++
+- avec g++, clang++
+
+#includes
+cctype : character handling function : http://www.cplusplus.com/reference/cctype/
 
 Ressources : 
 - https://www.youtube.com/watch?v=Rub-JsjMhWY
