@@ -111,7 +111,7 @@ Si dans une classe on a un pointeur, qu'on copie un objet de cette classe à par
 Il faut donc définir le constructeur de copie, qui prendra pour paramètre une référence constante vers un objet du même type - voir sous-dir alloc. 
 On peut aussi faire une méthode operator= qui vient nous permettre de faire david=goliath. La différence c'est qu'on pourrait faire ça après l'initialisation de david, alors que le constructeur de copie n'est utilisable qu'à l'initialisation. 
 Cette méthode operator= renverra un pointeur *this, renverra l'objet lui-même. Si on fait cela, il faudra aussi penser à delete l'ancienne arme de david.
-Si l'on a besoin d'écrire un constructeur de copie, alors il faut aussi obligatoirement écrire une surcharge de operator=.
+Si l'on a besoin d'écrire un constructeur de copie, alors il faut aussi obligatoirement écrire une surcharge de operator=. Voir sous-dir alloc.
 
 #Pointeur this
 Dans toutes les classes, on dispose d'un pointeur ayant pour nom this, qui pointe vers l'objet actuel.
@@ -119,10 +119,57 @@ Chaque objet possède un pointeur thisqui pointe vers l'objet lui-même.
 Cela sert dans une méthode qui doit renvoyer un pointeur vers l'objet auquel elle appartient. La méthode renvoie l'objet lui-meme. 
 c'est ce qu'on utilise dans les méthode qui définissent un opérateur : voir operateur += dans aritmetic. 
 
+#Heritage
+Technique qui permet de créer une classe à partir d'une autre classe. Evite de réécrire même code source. 
+La classe Guerrierhérite de Personnage, la classe Magicien hérite de Personnage... On parle de classes mères et filles, ou de spécialisation de classes.
+On peut avoir une classe qui hérite d'une classe qui hérite elle-meme d'une classe.
+
+Important : on peut substituer un objet de la classe fille à un pointeur ou une référence vers un objet de la classe mère.
+Exemple : ma classe Player a une méthode :
+```c++
+void    punch(Player &target)const;
+````
+Ma classe warrior hérite de la classe player.
+Donc je peux faire 
+```c++
+player.punch(warrior);
+```
+
+On peut également faire, avec des pointeurs :
+```c++
+Player *myPlayer(0);
+Warrior *myWarrior = new Warrior();
+ 
+myPlayer = myWarrior;
+```
+-> on peut affecter un élément enfant à un élément parent, mais pas l'inverse.
+-> pas vraiment une affectation, mais plutot une substitution de pointeur. 
+Les objets restent comme ils sont dans la mémoire, on ne fait que diriger le pointeur vers la partie de la fille qui a été héritée. La classe fille est constituée de deux morceaux : les attributs et méthodes héritées de la mère d'une part, et les attributs et méthodes qui lui sont propres d'autre part. En faisant objetMere = objetFille;, on dirige le pointeur objetMerevers les attributs et méthodes hérités uniquement (figure suivante).
+On ne pourra donc accéder qu'aux éléments de l'objetfille qui sont issus de la classe mère. 
+
+#Héritage et constructeur
+Dans le constructeur d'une classe fille, il faudra indiquer d'appeler d'abord le constructeur de la classe parente :
+```c++
+Wizard::Wizard() : Player(), m_mana(100)
+```
+Même chose avec les constructeurs surchargés :
+```c++
+Wizard(std::string name) : Player(name), m_mana(100); //constructeur surchargé de wizard
+Player(std::string name); //constructeur surchargé de Player
+```
+
+#Portée protected
+Pour les classes mères qui se font hériter.
+Les éléments qui suivent protected ne sont pas accessibles depuis l'extérieur de la classe, sauf si c'est une classe fille.
+Evite d'utiliser des accesseurs pour les attributs.
+
+#Masquage
+Si j'ai deux fonctions avec le même nom chez une classe mère et une classe fille, celle de la classe mère sera masquée. 
+Si la fonction de la fille a juste qqs ajouts par rapport à celle de la mère, on peut préciser d'appeler la fonction de la mère puis écrire dessous le nouveau code. 
+Voir la fonction introduction dans le sous-dir héritage. 
 
 #Compilation:
 - avec g++
-
 
 Ressources : 
 - https://www.youtube.com/watch?v=Rub-JsjMhWY
