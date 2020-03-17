@@ -71,6 +71,8 @@ Il faut laisser les attributs en privé pour qu'ils ne soient pas modifiables de
 Il faut toujours passer par des méthodes (des fonctions) qui vont d'abord vérifier qu'on fait les choses correctement avant de modifier les attributs. Le contenu de l'objet reste une « boîte noire ».
 La méthode a le droit de modifier l'attribut, car elle fait partie de la classe. 
 
+Exception : si j'ai deux objets de la meme classe, je peux avec une méthode de cette classe appelée via l'objet 1, accéder aux attributs de l'objet 2. 
+
 #Constructeur
 Il faut initialiser les attributs à l'éiade d'un constructeur.
 Le constructeut est un méthode, qui est appelée automatiquement à chaque fois que l'on crée un objet basé sur cette classe.
