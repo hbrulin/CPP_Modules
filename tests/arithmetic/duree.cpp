@@ -5,7 +5,7 @@ Duree::Duree(int heures, int minutes, int secondes) : m_heures(heures), m_minute
 {
 }
 
-void Duree::operator+=(const Duree &a)
+Duree &Duree::operator+=(const Duree &a)
 {
     m_secondes += a.m_secondes;
     m_minutes += m_secondes / 60;
@@ -16,6 +16,8 @@ void Duree::operator+=(const Duree &a)
     m_minutes %= 60;
 
     m_heures += a.m_heures;
+
+    return *this;
 }
 
 void Duree::print()const

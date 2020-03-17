@@ -88,6 +88,9 @@ On a un constructeur par défaut, et on peut créer un deuxieme constructeur ave
 
 Le compilateur crée automatiquement un constructeur de copie : C'est une surcharge du constructeur qui initialise notre objet en copiant les valeurs des attributs de l'autre objet.
 
+#Surchage d'opérateurs 
+Le C++ permet de surcharger les opérateurs, c'est-à-dire de créer des méthodes pour modifier le comportement des symboles +, -, *, /, >=, etc. Voir dans les tests, on fait s'additionner les attributs de deux objets différents, ou faire que cout utilise << pour afficher tous les attributs d'un objet, alors que normalement il ne peut fonctionner qu'avec int, double, string...
+
 #Destructeur
 Pas besoin si pas d'allocation dynamique.
 Un destructeur est une méthode qui commence par un tilde (~) suivi du nom de la classe.
@@ -103,6 +106,18 @@ Si j'ai une classe utilisée par une autre classe, je ne pourrais pas à partir 
 #.hpp
 recommandé de ne pas utiliser le "using namespace" dans un .hpp, pour éviter confusions.
 
+#constructeur de copie
+Si dans une classe on a un pointeur, qu'on copie un objet de cette classe à partir d'un autre avec le constructeur : le pointeur sera copié tel quel, c'est l'adresse qui sera copiée et pas une nouvelle allocation de pointeur pour le nouvel objet. Peut poser problème si les deux objets sont supprimés : on aura deux delete sur le meme pointeur.
+Il faut donc définir le constructeur de copie, qui prendra pour paramètre une référence constante vers un objet du même type - voir sous-dir alloc. 
+On peut aussi faire une méthode operator= qui vient nous permettre de faire david=goliath. La différence c'est qu'on pourrait faire ça après l'initialisation de david, alors que le constructeur de copie n'est utilisable qu'à l'initialisation. 
+Cette méthode operator= renverra un pointeur *this, renverra l'objet lui-même. Si on fait cela, il faudra aussi penser à delete l'ancienne arme de david.
+Si l'on a besoin d'écrire un constructeur de copie, alors il faut aussi obligatoirement écrire une surcharge de operator=.
+
+#Pointeur this
+Dans toutes les classes, on dispose d'un pointeur ayant pour nom this, qui pointe vers l'objet actuel.
+Chaque objet possède un pointeur thisqui pointe vers l'objet lui-même.
+Cela sert dans une méthode qui doit renvoyer un pointeur vers l'objet auquel elle appartient. La méthode renvoie l'objet lui-meme. 
+c'est ce qu'on utilise dans les méthode qui définissent un opérateur : voir operateur += dans aritmetic. 
 
 
 #Compilation:

@@ -12,7 +12,7 @@ int main()
     cout << "Size of int " << sizeof(num) << endl;
     cout << "5 + 2 = " << 5+2 << endl;
     cout << "What is your name?" << endl;
-    getline(cin, yourName);
+    getline(cin, yourName); // ou cin >> yourName;
     cout << "hello " << yourName << endl;
     cout << "Size of your name " << yourName.size() << endl;
     cout << "Is string empty " << yourName.empty() << endl;

@@ -11,8 +11,7 @@ class Duree
 
     //constructeur
     Duree(int heures = 0, int minutes = 0, int secondes = 0);
-    Duree& operator+=(const Duree &a);
-    void print()const;
+    void print(std::ostream &flux)const;
 
     private:
 
@@ -21,6 +20,6 @@ class Duree
     int m_secondes;
 };
 
-Duree operator+(Duree const &a, Duree const &b);
+std::ostream &operator<<(std::ostream &flux, Duree const &duree);
 
 #endif
