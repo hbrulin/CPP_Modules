@@ -6,7 +6,7 @@ Contact::Contact()
 
 void    Contact::getData()
 {
-    std::cout << "Okay, first things first : What is your first name?" << std::endl;
+    std::cout << "Okay, first things first : What is your first name?" << std::endl << "> ";
     getline(std::cin, m_firstName);
     std::cout << "And your last name?" << std::endl << "> ";
     getline(std::cin, m_lastName);
@@ -145,9 +145,9 @@ int main ()
         }
         else if (input == "ADD")
         {
-            contact_nb++;
             book[contact_nb] = Contact(); //appel du constructeur
             book[contact_nb].getData();
+            contact_nb++;
         }
         else if (input == "SEARCH")
             ft_search(book, contact_nb);
