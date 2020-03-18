@@ -174,6 +174,9 @@ The reason that we have given cols a type of std::string::size_type is to ensure
 
 -> https://stackoverflow.com/questions/1181079/stringsize-type-instead-of-int
 
+#Stringstream
+http://www.cplusplus.com/reference/sstream/stringstream/
+
 #Compilation:
 - avec g++, clang++
 
