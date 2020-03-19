@@ -48,6 +48,7 @@ delete [] t; //free tab
 #Type référence:
 void swap(int &v1, int &v2) - prototype d'une fonction a laquelle on va passer v1 et v2 by reference, et pas by value, sans devoir utiliser des pointeurs.
 si une fonction min qui prend &v1 et v2 return la minimale, elle va retourner la variable elle-meme, son adresse et non sa valeur. On peut donc faire quelque chose comme : min(a, b) = 45. Si a vaut 12 et b 24, a vaudra alors 45. 
+https://cpp.developpez.com/cours/cpp/?page=page_6
 
 #strings
 Possible de concaténer des strings avec +, ou de les comparer avec ==.
