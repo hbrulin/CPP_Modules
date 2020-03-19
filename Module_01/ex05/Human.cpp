@@ -5,7 +5,7 @@ Human::Human()
 {
 }
 
-const Brain   &Human::getBrain()
+const Brain   &Human::getBrain() //je passe renvoie le vrai objet et pas une copie
 {
     return this->m_brain;
 }
