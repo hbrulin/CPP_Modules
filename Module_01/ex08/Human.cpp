@@ -19,6 +19,7 @@ void Human::intimidatingShout(std::string const &target)
 void Human::action(std::string const &action_name, std::string const &target)
 {
 	int key;
+    //tableau de ptr sur ft
 	void (Human::* const actions[3])(std::string const &target) = {
 		&Human::meleeAttack,
 		&Human::rangedAttack,
