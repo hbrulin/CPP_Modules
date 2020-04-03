@@ -14,13 +14,17 @@
 
 
 int		main( void ) {
-
+//typedef d'n vecteur/tableau d'accounts, d'un autre d'ints et pairing de leurs iterateurs.
+//Les itérateurs sont des objets ressemblant aux pointeurs, qui vont nous permettre de parcourir les conteneurs. 
+//Un conteneur est un objet permettant de stocker d'autres objets. Un vector est un conteneur. 
+//std::pair est une structure générique qui fournit un moyen de stocker deux objets hétérogènes comme une seule entité.
 	typedef std::vector<Account::t>							  accounts_t;
 	typedef std::vector<int>								  ints_t;
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
 
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
+	//declaration d'un vecteur
 	accounts_t				accounts( amounts, amounts + amounts_size );
 	accounts_t::iterator 	acc_begin	= accounts.begin();
 	accounts_t::iterator 	acc_end		= accounts.end();
