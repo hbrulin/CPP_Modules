@@ -29,6 +29,8 @@ class FragTrap {
     void beRepaired(unsigned int amount);
 
     void    vaulthunter_dot_exe(std::string const & target);
+
+    void    display();
 };
 
 #endif
