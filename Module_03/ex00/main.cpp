@@ -10,6 +10,9 @@ int main(void) {
     voldemort.takeDamage(30);
     voldemort.display();
 
+    voldemort.rangedAttack("Harry Potter");
+    voldemort.meleeAttack("Harry Potter");
+
     voldemort.vaulthunter_dot_exe("Harry Potter");
     voldemort.vaulthunter_dot_exe("Harry Potter");
     voldemort.vaulthunter_dot_exe("Harry Potter");

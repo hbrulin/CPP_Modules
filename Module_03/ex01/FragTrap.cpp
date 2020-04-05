@@ -42,14 +42,14 @@ void FragTrap::takeDamage(unsigned int amount) {
 	this->hit_points -= taken;
 	if (this->hit_points < 0)
 		this->hit_points = 0;
-    std::cout << "FR4G-TP " << name << " took " << amount << " of HP!" << std::endl;
+    std::cout << "FR4G-TP " << name << " took " << amount << " of damage!" << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount) {
     this->hit_points += amount;
 	if (this->hit_points > max_points)
 		this->hit_points = max_points;
-    std::cout << "FR4G-TP " << name << " recovered " << amount << " of damage!" << std::endl;
+    std::cout << "FR4G-TP " << name << " recovered " << amount << " of HP!" << std::endl;
 }
 
 static const std::string random_attacks[] = {
