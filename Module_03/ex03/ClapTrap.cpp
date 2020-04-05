@@ -53,5 +53,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void    ClapTrap::display() {
-    std::cout << name << " has " << hit_points << " HP and " << nrj_points << " energy points." << std::endl;
+    std::cout << "ClapTrap " << name << " has " << hit_points << " HP and " << nrj_points << " energy points." << std::endl;
+}
+
+std::string ClapTrap::getName() {
+    return this->name;
 }
