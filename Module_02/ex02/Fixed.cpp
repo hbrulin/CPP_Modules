@@ -88,19 +88,27 @@ bool Fixed::operator!=(Fixed const &b) const {
 }
 
 Fixed Fixed::operator+(Fixed const &b) {
-    return m_value + b.getRawBits();
+    Fixed ret;
+    ret.setRawBits(this->m_value + b.getRawBits());
+    return (ret);
 }
 
 Fixed Fixed::operator-(Fixed const &b) {
-    return m_value - b.getRawBits();
+    Fixed ret;
+    ret.setRawBits(this->m_value - b.getRawBits());
+    return (ret);
 }
 
 Fixed Fixed::operator*(Fixed const &b) {
-    return m_value * b.getRawBits(); //faut-il simplement faire ça?
+    Fixed ret;
+    ret.setRawBits(this->m_value * b.getRawBits());
+    return (ret); //faut-il simplement faire ça?
 }
 
 Fixed Fixed::operator/(Fixed const &b) {
-    return m_value / b.getRawBits(); //idem
+    Fixed ret;
+    ret.setRawBits(this->m_value / b.getRawBits());
+    return (ret); //idem
 }
 
 Fixed Fixed::operator++(int) {
