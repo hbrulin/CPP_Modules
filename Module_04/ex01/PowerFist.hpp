@@ -1,0 +1,19 @@
+#ifndef POWERFIST_HPP
+#define POWERFIST_HPP
+
+#include "iostream"
+#include "string"
+#include "AWeapon.hpp"
+
+class PowerFist : AWeapon{
+
+    public:
+    PowerFist();
+    ~PowerFist();
+    PowerFist(PowerFist const &tocopy);
+    PowerFist &operator=(const PowerFist &tocopy);
+    void attack() const; 
+
+};
+
+#endif
