@@ -27,4 +27,6 @@ int Enemy::getHP() const {
 
 void Enemy::takeDamage(int dmg) {
     this->_HP -= dmg;
+	if (this->_HP < 0)
+		this->_HP = 0;
 }

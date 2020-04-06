@@ -10,6 +10,7 @@ SuperMutant::~SuperMutant() {
 
 SuperMutant::SuperMutant(SuperMutant const &tocopy) : Enemy(tocopy._HP, tocopy._type) {
     *this = tocopy;
+    std::cout << "Gaaah. Break everything !" << std::endl;
 }
 
 SuperMutant &SuperMutant::operator=(const SuperMutant &tocopy) {
@@ -19,5 +20,7 @@ SuperMutant &SuperMutant::operator=(const SuperMutant &tocopy) {
 }
 
 void SuperMutant::takeDamage(int dmg) {
-    this->_HP -= dmg;
+    this->_HP -= dmg + 3;
+    if (this->_HP < 0)
+		this->_HP = 0;
 }
