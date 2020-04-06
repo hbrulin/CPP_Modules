@@ -46,8 +46,8 @@ int Squad::push(ISpaceMarine *unit) {
 		for (int i = 0; i < this->count; i++)
 			if (this->units[i] == unit) //on ajoute pas deux fois la meme unit
 				return (this->count);
-        this->count++;
 		this->units[this->count] = unit;
+		this->count++;
         return this->count;
 	}
 	else
