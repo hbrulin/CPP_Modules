@@ -16,7 +16,7 @@ class AWeapon {
 
     public:
     AWeapon(std::string const & name, int apcost, int damage); 
-    ~AWeapon();
+    virtual ~AWeapon();
     AWeapon(AWeapon const &tocopy);
     AWeapon &operator=(const AWeapon &tocopy);
     std::string const getName() const;

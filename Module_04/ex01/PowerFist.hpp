@@ -5,7 +5,7 @@
 #include "string"
 #include "AWeapon.hpp"
 
-class PowerFist : AWeapon{
+class PowerFist : virtual public AWeapon{
 
     public:
     PowerFist();

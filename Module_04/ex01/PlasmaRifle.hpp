@@ -5,7 +5,7 @@
 #include "string"
 #include "AWeapon.hpp"
 
-class PlasmaRifle : AWeapon{
+class PlasmaRifle : virtual public AWeapon{
 
     public:
     PlasmaRifle();
