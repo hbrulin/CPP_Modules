@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+
+class AMateria;
 
 class ICharacter
 {

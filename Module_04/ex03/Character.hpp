@@ -2,6 +2,7 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter {
 
@@ -17,7 +18,7 @@ class Character : public ICharacter {
     Character(std::string name);
     Character(Character const &tocopy);
 	Character &operator=(Character const &tocopy);
-    ~Character() {}
+    ~Character();
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);

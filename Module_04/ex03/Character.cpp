@@ -14,28 +14,50 @@ Character::Character(Character const &tocopy) {
 Character &Character::operator=(Character const &tocopy) {
     _name = tocopy._name;
     _count = tocopy._count;
-    inventory = new AMateria*[_count];
-    for (int i = 0; i < _count; i++)
-        inventory[i] = tocopy.inventory[i]->clone();
+    //L’ancienne Materia du Character doit être supprimée.
+    for (int i = 0; i < 4; i++)
+    {
+        if (inventory[i])
+            delete inventory[i];
+    }
+    for (int j = 0; j < 4; j++)
+    {
+        if (inventory[j])
+            inventory[j] = tocopy.inventory[j]->clone();
+    }
     return *this;
 }
 
 Character::~Character() {
-
+    for (int i = 0; i < 4; i++)
+    {
+        if (inventory[i])
+            delete inventory[i];
+    }
+	delete inventory;
 }
 
 std::string const &Character::getName() const {
-
+    return _name;
 }
 
 void Character::equip(AMateria* m) {
-
+    if (_count == 4)
+        return;
+    int i = 0;
+    while(inventory[i])
+        i++;
+    inventory[i] = m;
+    _count++;
 }
 
 void Character::unequip(int idx) {
-
+    if (inventory[idx])
+        inventory[idx] = NULL;
+    _count--;
 }
 
 void Character::use(int idx, ICharacter& target) {
-
+    if (inventory[idx])
+        inventory[idx]->use(target);
 }

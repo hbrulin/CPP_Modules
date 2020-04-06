@@ -3,11 +3,11 @@
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria {
-
+class Cure: public AMateria 
+{
     public:
     Cure();
-    Cure(Ice const &tocopy);
+    Cure(Cure const &tocopy);
 	Cure &operator=(Cure const &tocopy);
     ~Cure();
     AMateria* clone() const;
