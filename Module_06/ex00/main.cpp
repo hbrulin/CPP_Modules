@@ -5,7 +5,7 @@
 const double MAX_DOUBLE = static_cast<double>(INT_MAX);
 const double MIN_DOUBLE = static_cast<double>(INT_MIN);
 
-void handleFloat(std::string arg)
+void convFloat(std::string arg)
 {
     char *p;
     const char *tmp = arg.c_str();
@@ -60,7 +60,7 @@ void handleFloat(std::string arg)
     std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;    
 }
 
-void handleDouble(std::string arg)
+void convDouble(std::string arg)
 {
     char *p;
     const char *tmp = arg.c_str();
@@ -89,7 +89,7 @@ void handleDouble(std::string arg)
         return;
     }
     double d = strtod(tmp, &p); //Convert string to double
-    float f = static_cast<float>(f);
+    float f = static_cast<float>(d);
     int i = static_cast<int>(d);
     char c = static_cast<char>(i);
     if (&tmp[arg.length()] != p)

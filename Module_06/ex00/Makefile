@@ -1,8 +1,6 @@
 NAME = convert
 
-SRCS = main.cpp Converter.cpp
-
-INC = Converter.hpp
+SRCS = main.cpp
 
 CFLAGS = -Wall -Werror -Wextra -g
 
@@ -18,7 +16,7 @@ $(NAME): $(OBJ)
 
 $(BUILD_DIR)/%.o: %.cpp Makefile
 	@mkdir -p $(BUILD_DIR)
-	clang++ $(CFLAGS) -I $(INC) -o $@ -c $<
+	clang++ $(CFLAGS) -o $@ -c $<
 
 clean:
 	@/bin/rm -rf $(BUILD_DIR)
