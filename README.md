@@ -184,6 +184,11 @@ http://www.cplusplus.com/reference/sstream/stringstream/
 #includes
 cctype : character handling function : http://www.cplusplus.com/reference/cctype/
 
+#c_str()
+La fonction membre c_str() est à utiliser pour raison de compatibilité avec du code qui ne prend en charge que les vieilles chaines de caractères du C (et c'est sa seule raison d'être).
+Maintenant on n'a plus de char * mais des objets de type string, et c_str() premet de récupérer le char* contenue dans un objet de type string.
+
 Ressources : 
 - https://www.youtube.com/watch?v=Rub-JsjMhWY
 - https://openclassrooms.com/en/courses/1894236-programmez-avec-le-langage-c
+- https://zestedesavoir.com/tutoriels/822/la-programmation-en-c-moderne/ 
