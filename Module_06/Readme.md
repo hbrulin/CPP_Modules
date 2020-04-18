@@ -10,3 +10,9 @@ NaN est en quelque sorte un élément absorbant. N'importe quoi additionné, mul
 
 #reinterpret cast
 https://en.cppreference.com/w/cpp/language/reinterpret_cast
+
+#dynamic casts
+https://www.bogotobogo.com/cplusplus/dynamic_cast.php
+Permet de caster un objet en un objet + spécifique (hérité). Si ce n'est pas possible, ça veut dire que pas d'héritage, et donc pas possible de caster. Renvoie null.
+Dans ex02, si ça renvoie null, c'est car je ne peux pas caster A en B, ou à en C, ou B en A etc... DOr je pourrais caster A en A, ou Base en A. Donc ça me permet de savoir si un objet appartient à une classe.
+Attention : base-to-derived conversions are not allowed with dynamic_cast unless the base class is polymorphic. ->  by adding virtual function.
