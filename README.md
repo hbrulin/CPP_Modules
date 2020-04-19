@@ -188,6 +188,13 @@ cctype : character handling function : http://www.cplusplus.com/reference/cctype
 La fonction membre c_str() est à utiliser pour raison de compatibilité avec du code qui ne prend en charge que les vieilles chaines de caractères du C (et c'est sa seule raison d'être).
 Maintenant on n'a plus de char * mais des objets de type string, et c_str() premet de récupérer le char* contenue dans un objet de type string.
 
+#Méthodes statiques
+Pour les utiliser, pas besoin de créer un objet. Il suffit de faire précéder le nom de la méthode du nom de la classe suivi d'un double deux-points.
+Une méthode statique ne peut pas accéder aux attributs de la classe. C'est vraiment une bête fonction mais rangée dans une classe. Cela permet de regrouper les fonctions dans des classes, par thème, et aussi d'éviter des conflits de nom.
+
+#Attributs statiques
+Tout comme les méthodes statiques, les attributs statiques appartiennent à la classe et non aux objets créés à partir de la classe. Initialisation en dehors du .hpp, dans l'espace global, c'est-à-dire en dehors de toute classe ou fonction, en dehors du main()notamment. Un attribut déclaré comme statique se comporte comme une variable globale, c'est-à-dire une variable accessible partout dans le code.
+
 Ressources : 
 - https://www.youtube.com/watch?v=Rub-JsjMhWY
 - https://openclassrooms.com/en/courses/1894236-programmez-avec-le-langage-c
