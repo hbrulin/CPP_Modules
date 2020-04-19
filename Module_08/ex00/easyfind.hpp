@@ -19,7 +19,7 @@ char const *NotFoundException::what() const throw()
 template <typename T>
 int &easyfind(T tab, int i) //je renvoie une ref, pas une copie
 {
-    typename T::iterator it = std::find(tab.begin(), tab.end(), i);
+    typename T::iterator it = std::find(tab.begin(), tab.end(), i); //il faut réutiliser typename ici
     if (it == tab.end())
         throw NotFoundException();
     return *it; //un itérateur se déréférence avec un pointeur

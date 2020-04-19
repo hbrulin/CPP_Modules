@@ -37,7 +37,7 @@ int Span::shortestSpan() const {
 	std::vector<int> sp(_tab);
 	std::vector<int>::iterator first = sp.begin();
 	std::vector<int>::iterator next = sp.begin() + 1;
-	size_t min_span = std::abs(*next - *first);
+	size_t min_span = std::abs(*next - *first); //pour que pas de val neg
 	while (next != sp.end())
 	{
 		size_t tmp = std::abs(*next - *first);
