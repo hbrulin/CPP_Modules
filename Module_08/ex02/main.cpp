@@ -20,8 +20,8 @@ int main()
 		std::cout << *it << std::endl;
 		++it; 
 	}
-	std::stack<int> s(mstack); 
-	
+	std::stack<int> s(mstack); //quid?
+
 	return 0;
 
 	//main à dvlper

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/20 17:57:04 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/04/21 16:21:20 by hbrulin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 
 Contact::Contact()
@@ -43,17 +55,18 @@ void    display_column(std::string s)
     }
     if (!s.size())
         std::cout << ' ';
-    else if (s.size() <= 10) //strictement inférieur??
+    else if (s.size() <= 10)
         std::cout << s[j];
     else
         std::cout << '.';
 }
 
-void    Contact::printFour(int index)const //comment faire pour les colonnes
+void    Contact::printFour(int index)const
 {
-    std::stringstream ss; //je declare un stream buffer destiné a contenir une séquence de characters.
-    ss << index; // je lui donne pour séquence le contenu d'index : cette séquence sera accessible directement comme une string.
-    display_column(ss.str()); //ici j'ai juste récupéré un objet string avec la copie de ce qu'il y avait dans le stream buffer (une copie d'index) - pour vouloir envoyer une string a display column
+	/*récupérer l'index en string */
+    std::stringstream ss;
+    ss << index;
+    display_column(ss.str());
     std::cout << '|';
     display_column(m_firstName);
     std::cout << '|';
@@ -89,8 +102,8 @@ int     getIndex(std::string indexString)
         if (indexString[i] < '0' || indexString[i] > '9')
             return -1;
     }
-    std::stringstream ss(indexString); //je fais une copie de ma string index dans buffer ss
-    ss >> num; //j'envoie dans un int ce buffer
+    std::stringstream ss(indexString);
+    ss >> num;
     if (ss.fail())
         return -1;
     return num;
@@ -130,7 +143,7 @@ int main ()
 {
     std::string input;
     int contact_nb = 0;
-    Contact book[8]; //tableau de 8 objets de classe contact
+    Contact book[8];
 
     std::cout << "Welcome to the 80's. I am your phonebook." << std::endl;
 

@@ -1,11 +1,13 @@
 #include "mutantstack.hpp"
 
 template<typename T>
-MutantStack<T>::MutantStack() : std::stack<T>() {
+MutantStack<T>::MutantStack(): std::stack<T>() {
+
 }
 
 template<typename T>
-MutantStack<T>::MutantStack(MutantStack<T> const &tocopy) : std::stack<T>(tocopy) {
+MutantStack<T>::MutantStack(MutantStack<T> const &tocopy): std::stack<T>(tocopy) {
+
 }
 
 template<typename T>

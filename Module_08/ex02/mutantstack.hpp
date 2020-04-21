@@ -5,7 +5,6 @@
 # include <iostream>
 # include <deque>
 
-
 template<typename T>
 class MutantStack: public std::stack<T>  //je la fais hériter de la classe stack qui prendra le type de son contenu entre <>. stack contient un attriut c, le conteneur.
 {
