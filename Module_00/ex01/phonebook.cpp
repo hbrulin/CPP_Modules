@@ -90,7 +90,7 @@ int     getIndex(std::string indexString)
             return -1;
     }
     std::stringstream ss(indexString); //je fais une copie de ma string index dans buffer ss
-    ss >> num; //j'envoie dans un int ce buffer
+    ss >> num; //j'envoie dans un int ce buffer, le flux fait la conversion (même principe que ifstream)
     if (ss.fail())
         return -1;
     return num;
