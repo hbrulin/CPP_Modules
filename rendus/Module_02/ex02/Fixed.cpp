@@ -91,15 +91,23 @@ Fixed Fixed::operator-(Fixed const &b) {
 }
 
 Fixed Fixed::operator*(Fixed const &b) {
-    Fixed ret;
-    ret.setRawBits(this->m_value * b.getRawBits());
-    return (ret);
+    Fixed val(*this);
+	long tmp1, tmp2;
+
+	tmp1 = ((long)this->getRawBits());
+	tmp2 = ((long)b.getRawBits());
+	val.setRawBits((tmp1 * tmp2) / (1 << BITS));
+	return (val);
 }
 
 Fixed Fixed::operator/(Fixed const &b) {
-    Fixed ret;
-    ret.setRawBits(this->m_value / b.getRawBits());
-    return (ret);
+   	Fixed val(*this);
+	long tmp1, tmp2;
+
+	tmp1 = ((long)this->getRawBits());
+	tmp2 = ((long)b.getRawBits());
+	val.setRawBits((tmp1 * (1 << BITS)) / tmp2);
+	return (val);
 }
 
 Fixed Fixed::operator++(int) {
