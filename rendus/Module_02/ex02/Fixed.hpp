@@ -10,7 +10,6 @@ class Fixed
     
     int m_value;
     static const int BITS;
-    static const int POWER;
 
     public:
     Fixed();
@@ -19,8 +18,8 @@ class Fixed
     ~Fixed();
     Fixed(Fixed const &tocopy);
     Fixed &operator=(const Fixed &tocopy);
-    int getRawBits(void) const; //renvoie valeur brute du nb a point fixe
-    void setRawBits(int const raw); //set la valeur du nb a pt fixe
+    int getRawBits(void) const; 
+    void setRawBits(int const raw);
     float toFloat() const;
     int toInt() const;
 
@@ -41,12 +40,13 @@ class Fixed
 	Fixed operator--(int);
     Fixed operator--();
 
+	static Fixed &min(Fixed &u, Fixed &v);
+	static const Fixed &min(const Fixed &u, const Fixed &v);
+	static Fixed & max(Fixed &u, Fixed &v);
+	static const Fixed &max(const Fixed &u, const Fixed &v);
+
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &c);
-Fixed &min(Fixed &u, Fixed &v);
-const Fixed &min(const Fixed &u, const Fixed &v);
-Fixed & max(Fixed &u, Fixed &v);
-const Fixed &max(const Fixed &u, const Fixed &v);
 
 #endif
