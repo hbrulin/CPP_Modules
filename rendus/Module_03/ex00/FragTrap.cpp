@@ -5,6 +5,7 @@ FragTrap::FragTrap(std::string s) : hit_points(100), max_points(100),
     rgd_dmg(20), dmg_reduc(5) 
 {
     std::cout << "FR4G-TP " << s << " has come to life. Ready for combat and more." << std::endl;
+	srand(time(NULL));
 }
 
 FragTrap::~FragTrap() {
@@ -71,6 +72,7 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target)
     if (this->nrj_points < 0)
 		this->nrj_points = 0;
     std::string attack = random_attacks[rand() % 5];
+
     std::cout << "FR4G-TP " << name << " attacks " << target << " with : " << attack << std::endl;
 }
 

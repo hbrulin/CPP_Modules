@@ -18,6 +18,7 @@ class ScavTrap {
     int dmg_reduc;
 
     public:
+	ScavTrap() {};
     ScavTrap(std::string s);
     ~ScavTrap();
     ScavTrap(ScavTrap const &tocopy);

@@ -18,6 +18,7 @@ class FragTrap {
     int dmg_reduc;
 
     public:
+	FragTrap() {};
     FragTrap(std::string s);
     ~FragTrap();
     FragTrap(FragTrap const &tocopy);
