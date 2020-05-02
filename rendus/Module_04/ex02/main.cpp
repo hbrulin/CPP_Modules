@@ -30,9 +30,9 @@ int main()
     vlc1->push(bob1);
     vlc1->push(jim1);
 	ISquad* vlc2 = new Squad(*vlc1);
-	ISquad* vlc3 = new Squad;
+	ISquad *vlc3 = new Squad;
 	vlc3->push(jeff);
-	vlc3 = vlc2;
+	vlc3 = vlc1;
 	std::cout << std::endl;
 	for (int i = 0; i < vlc2->getCount(); ++i) 
     {

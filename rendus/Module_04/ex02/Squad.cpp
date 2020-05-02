@@ -4,7 +4,7 @@ Squad::Squad() : count(0), units(NULL) {
 
 }
 
-Squad::Squad(ISquad const &tocopy) {
+Squad::Squad(ISquad const &tocopy): count(0), units(nullptr) {
 	this->count = 0;
 	for (int i = 0; i < tocopy.getCount(); i++)
 		this->push(tocopy.getUnit(i)->clone());
@@ -18,10 +18,9 @@ Squad &Squad::operator=(Squad const &tocopy) {
 		delete this->units;
 		this->units = NULL;
 	}
-	this->count = tocopy.count;
-    this->units = new ISpaceMarine*[this->count];
-    for (int i = 0; i < this->count; i++)
-        this->units[i] = tocopy.units[i]->clone();
+	this->count = 0;
+	for (int i = 0; i < tocopy.getCount(); i++)
+		this->push(tocopy.getUnit(i)->clone());
     return *this;
 }
 
