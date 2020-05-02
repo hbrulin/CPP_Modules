@@ -20,7 +20,7 @@ SuperMutant &SuperMutant::operator=(const SuperMutant &tocopy) {
 }
 
 void SuperMutant::takeDamage(int dmg) {
-    this->_HP -= dmg + 3;
+    this->_HP -= dmg - 3;
     if (this->_HP < 0)
 		this->_HP = 0;
 }

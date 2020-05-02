@@ -1,9 +1,9 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(): _name(std::string()), _AP(0), _dmg(0){
+AWeapon::AWeapon(): _name(std::string()), _dmg(0), _AP(0) {
 }
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _AP(apcost), _dmg(damage) {
+AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _dmg(damage), _AP(apcost) {
 
 }
 

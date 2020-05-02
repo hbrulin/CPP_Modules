@@ -9,7 +9,7 @@ class PowerFist : virtual public AWeapon{
 
     public:
     PowerFist();
-    ~PowerFist();
+    virtual ~PowerFist();
     PowerFist(PowerFist const &tocopy);
     PowerFist &operator=(const PowerFist &tocopy);
     void attack() const; 

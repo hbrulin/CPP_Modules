@@ -6,8 +6,6 @@
 
 class Victim {
 
-    private:
-
     protected:
     std::string _name;
 

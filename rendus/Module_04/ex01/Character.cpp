@@ -1,9 +1,9 @@
 #include "Character.hpp"
 
-Character::Character() : _name("noName"), _AP(0), _weapon(NULL) {
+Character::Character() : _name("noName"), _AP(40), _weapon(NULL) {
 }
 
-Character::Character(std::string const &name) : _name(name), _AP(40), _weapon(NULL) { //cmt initialiser?
+Character::Character(std::string const &name) : _name(name), _AP(40), _weapon(NULL) {
 
 }
 
@@ -36,7 +36,7 @@ void Character::recoverAP() {
     _AP += 10;
     if (_AP > 40)
         _AP = 40;
-    std::cout << "10 Action Points restored." << _name << " now has " << _AP << " Action Points." << std::endl;
+    std::cout << "10 Action Points restored. " << _name << " now has " << _AP << " Action Points." << std::endl;
 }
 
 void Character::equip(AWeapon *weapon) {
@@ -47,13 +47,16 @@ void Character::attack(Enemy *enemy) {
     if (!this->_weapon || !enemy)
 		return ;
 	if (this->_AP < this->_weapon->getAPCost())
+	{
+		std::cout << "Not enough AP" << std::endl;
 		return ;
+	}
 	this->_AP -= this->_weapon->getAPCost();
 	std::cout << this->_name << " attacks " << enemy->getType()
 			<< " with a " << this->_weapon->getName() << std::endl;
 	this->_weapon->attack();
 	enemy->takeDamage(this->_weapon->getDamage());
-	if (enemy->getHP() == 0)
+	if (enemy->getHP() == 0 && enemy != NULL)
 		delete enemy;
 }
 
