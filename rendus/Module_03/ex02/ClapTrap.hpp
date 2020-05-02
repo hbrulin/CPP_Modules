@@ -18,6 +18,7 @@ class ClapTrap {
     int dmg_reduc;
 
     public:
+	ClapTrap() {};
     ClapTrap(std::string s);
     ~ClapTrap();
     ClapTrap(ClapTrap const &tocopy);

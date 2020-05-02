@@ -9,6 +9,7 @@ FragTrap::FragTrap(std::string s) : ClapTrap(s)
 	this->rgd_dmg = 20;
 	this->dmg_reduc = 5;
     std::cout << "FR4G-TP " << s << " has come to life. Ready for combat." << std::endl;
+	srand(time(NULL));
 }
 
 FragTrap::~FragTrap() {

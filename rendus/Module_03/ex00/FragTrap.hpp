@@ -16,9 +16,9 @@ class FragTrap {
     int melee_dmg;
     int rgd_dmg;
     int dmg_reduc;
+	FragTrap() {};
 
     public:
-	FragTrap() {};
     FragTrap(std::string s);
     ~FragTrap();
     FragTrap(FragTrap const &tocopy);

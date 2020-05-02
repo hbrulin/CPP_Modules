@@ -16,9 +16,9 @@ class ScavTrap {
     int melee_dmg;
     int rgd_dmg;
     int dmg_reduc;
+	ScavTrap() {};
 
     public:
-	ScavTrap() {};
     ScavTrap(std::string s);
     ~ScavTrap();
     ScavTrap(ScavTrap const &tocopy);
