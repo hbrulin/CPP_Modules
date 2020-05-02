@@ -195,6 +195,9 @@ Une méthode statique ne peut pas accéder aux attributs de la classe. C'est vra
 #Attributs statiques
 Tout comme les méthodes statiques, les attributs statiques appartiennent à la classe et non aux objets créés à partir de la classe. Initialisation en dehors du .hpp, dans l'espace global, c'est-à-dire en dehors de toute classe ou fonction, en dehors du main()notamment. Un attribut déclaré comme statique se comporte comme une variable globale, c'est-à-dire une variable accessible partout dans le code.
 
+#Virtual Inheritance
+https://www.cprogramming.com/tutorial/virtual_inheritance.html
+
 Ressources : 
 - https://www.youtube.com/watch?v=Rub-JsjMhWY
 - https://openclassrooms.com/en/courses/1894236-programmez-avec-le-langage-c

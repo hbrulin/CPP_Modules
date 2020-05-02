@@ -7,6 +7,9 @@
 
 class FragTrap : virtual public ClapTrap {
 
+	private:
+	FragTrap() {};
+
     public:
     FragTrap(std::string s);
     ~FragTrap();
@@ -15,8 +18,6 @@ class FragTrap : virtual public ClapTrap {
 
     void rangedAttack(std::string const & target);
     void meleeAttack(std::string const & target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
 
     void    vaulthunter_dot_exe(std::string const & target);
 };
