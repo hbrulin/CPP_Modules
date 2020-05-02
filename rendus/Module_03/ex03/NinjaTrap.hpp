@@ -9,6 +9,9 @@
 
 class NinjaTrap : public ClapTrap {
 
+	private:
+	NinjaTrap() {};
+
     public:
     NinjaTrap(std::string s);
     ~NinjaTrap();
@@ -17,8 +20,6 @@ class NinjaTrap : public ClapTrap {
 
     void rangedAttack(std::string const & target);
     void meleeAttack(std::string const & target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
 
     void ninjaShoeBox(ClapTrap &target);
     void ninjaShoeBox(FragTrap &target);

@@ -19,8 +19,11 @@ int main(void) {
     harry.challengeNewcomer("Voldemort");
     harry.challengeNewcomer("Voldemort");
 
+	ClapTrap snape("Severus Snape");
     umbridge.ninjaShoeBox(harry);
     umbridge.ninjaShoeBox(voldemort);
+	umbridge.ninjaShoeBox(umbridge);
+	umbridge.ninjaShoeBox(snape);
     
     return 0;
 }

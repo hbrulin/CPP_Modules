@@ -9,6 +9,7 @@ FragTrap::FragTrap(std::string s) : ClapTrap(s)
 	this->rgd_dmg = 20;
 	this->dmg_reduc = 5;
     std::cout << "FR4G-TP " << s << " has come to life. Ready for combat." << std::endl;
+	srand(time(NULL));
 }
 
 FragTrap::~FragTrap() {
@@ -38,21 +39,6 @@ void FragTrap::rangedAttack(std::string const & target) {
 
 void FragTrap::meleeAttack(std::string const & target) {
     std::cout << "FR4G-TP " << name << "kicked " << target << "'s ass!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-    int taken = amount - this->dmg_reduc;
-	this->hit_points -= taken;
-	if (this->hit_points < 0)
-		this->hit_points = 0;
-    std::cout << "FR4G-TP " << name << " took " << amount << " of damage!" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-    this->hit_points += amount;
-	if (this->hit_points > max_points)
-		this->hit_points = max_points;
-    std::cout << "FR4G-TP " << name << " recovered " << amount << " of HP!" << std::endl;
 }
 
 static const std::string random_attacks[] = {
