@@ -3,7 +3,7 @@
 
 # include "ISquad.hpp"
 
-class Squad: public ISquad
+class Squad: virtual public ISquad
 {
 private:
 	int count;
@@ -11,7 +11,7 @@ private:
 
 public:
 	Squad();
-	Squad(Squad const &tocopy);
+	Squad(ISquad const &tocopy);
 	virtual ~Squad();
 	Squad &operator=(Squad const &tocopy);
 

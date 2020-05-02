@@ -6,7 +6,7 @@ AssaultTerminator::AssaultTerminator() {
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const &tocopy) {
     *this = tocopy;
-    std::cout << "* teleports from space *" << std::endl; //faut-il mettre une deuxième fois?
+    std::cout << "* teleports from space *" << std::endl;
 }
 
 AssaultTerminator::~AssaultTerminator() {
@@ -14,6 +14,7 @@ AssaultTerminator::~AssaultTerminator() {
 }
 
 AssaultTerminator &AssaultTerminator::operator=(AssaultTerminator const &tocopy) {
+	(void)tocopy;
     return *this;
 }
 

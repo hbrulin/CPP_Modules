@@ -5,8 +5,6 @@
 #include <string>
 #include <iostream>
 
-//sorte de container/template
-
 class ISquad {
 
     public:

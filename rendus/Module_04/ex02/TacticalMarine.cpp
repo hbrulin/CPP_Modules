@@ -6,7 +6,7 @@ TacticalMarine::TacticalMarine() {
 
 TacticalMarine::TacticalMarine(TacticalMarine const &tocopy) {
     *this = tocopy;
-    std::cout << "Tactical Marine ready for action !" << std::endl; //faut-il mettre une deuxième fois?
+    std::cout << "Tactical Marine ready for action !" << std::endl;
 }
 
 TacticalMarine::~TacticalMarine() {
@@ -14,6 +14,7 @@ TacticalMarine::~TacticalMarine() {
 }
 
 TacticalMarine &TacticalMarine::operator=(TacticalMarine const &tocopy) {
+	(void)tocopy;
     return *this;
 }
 
