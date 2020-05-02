@@ -6,6 +6,7 @@ FragTrap::FragTrap(std::string s) : hit_points(100), max_points(100),
     rgd_dmg(20), dmg_reduc(5) 
 {
     std::cout << "FR4G-TP " << s << " has come to life. Ready for combat." << std::endl;
+	srand(time(NULL));
 }
 
 FragTrap::~FragTrap() {

@@ -4,11 +4,11 @@ ScavTrap::ScavTrap(std::string s) : hit_points(100), max_points(100),
     nrj_points(50), max_nrj(50), level(1), name(s), melee_dmg(20),
     rgd_dmg(15), dmg_reduc(3) 
 {
-    std::cout << "Scav " << s << " has come to life. Ready for combat." << std::endl;
+    std::cout << "Scav " << s << " is ready to rock!" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "Scav " << name << " has succumbed to its injuries." << std::endl;
+    std::cout << "Scav " << name << " has ridiculously succumbed to its injuries." << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &tocopy) {
@@ -33,7 +33,7 @@ void ScavTrap::rangedAttack(std::string const & target) {
 }
 
 void ScavTrap::meleeAttack(std::string const & target) {
-    std::cout << "ScavTrap " << name << "punched " << target << "!" << std::endl;
+    std::cout << "ScavTrap " << name << "punched " << target << " in the face!" << std::endl;
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
