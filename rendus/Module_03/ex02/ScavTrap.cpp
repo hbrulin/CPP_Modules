@@ -39,22 +39,6 @@ void ScavTrap::meleeAttack(std::string const & target) {
     std::cout << "ScavTrap " << name << "punched " << target << "!" << std::endl;
 }
 
-void ScavTrap::takeDamage(unsigned int amount) {
-    int taken = amount - this->dmg_reduc;
-	this->hit_points -= taken;
-	if (this->hit_points < 0)
-		this->hit_points = 0;
-    std::cout << "Scav " << name << " was inflicted " << amount << " of damage!" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-    this->hit_points += amount;
-	if (this->hit_points > max_points)
-		this->hit_points = max_points;
-    std::cout << "Scav " << name << " was healed : +" << amount << " HP!" << std::endl;
-}
-
-
 static const std::string challenges[] = {
     "get the f**k out of here!",
     "get a new haircut!",

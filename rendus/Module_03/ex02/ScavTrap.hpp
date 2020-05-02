@@ -18,8 +18,6 @@ class ScavTrap : public ClapTrap {
 
     void rangedAttack(std::string const & target);
     void meleeAttack(std::string const & target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
 
     void challengeNewcomer(const std::string &newcomer);
 
