@@ -24,6 +24,7 @@ int main()
     catch (std::exception const &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
+	std::cout << std::endl;
 
     std::cout << "Unsigned" << std::endl;
     try {
@@ -41,6 +42,7 @@ int main()
     catch (std::exception const &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
+	std::cout << std::endl;
 
     std::cout << "Grade too low" << std::endl;
     try {
