@@ -2,6 +2,8 @@
 
 MateriaSource::MateriaSource() : _count(0) {
     source = new AMateria*[4];
+	for (int i = 0; i < 4; i++)
+        source[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const &tocopy) {
@@ -22,7 +24,7 @@ void MateriaSource::learnMateria(AMateria* m) {
     if (_count == 4)
         return;
     int i = 0;
-    while(source[i])
+    while(source[i] != NULL)
         i++;
     source[i] = m;
     _count++;

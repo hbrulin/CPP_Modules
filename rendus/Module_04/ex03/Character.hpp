@@ -11,14 +11,14 @@ class Character : public ICharacter {
     
     protected:
     std::string _name;
-    AMateria **inventory;
+    AMateria *inventory[4];
     int _count;
 
     public:
     Character(std::string name);
     Character(Character const &tocopy);
 	Character &operator=(Character const &tocopy);
-    ~Character();
+    virtual ~Character();
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);
