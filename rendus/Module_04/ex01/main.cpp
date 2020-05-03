@@ -5,6 +5,8 @@
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
 #include "Character.hpp"
+#include "Wizard.hpp"
+#include "Wand.hpp"
 
 
 int main() 
@@ -74,6 +76,15 @@ int main()
 	std::cout << *moi;
 	moi->attack(d);
 
+	std::cout << std::endl;
+	std::cout << "*** Derived classes ***" << std::endl;
+	Enemy* e = new Wizard();
+    AWeapon* w = new Wand(); 
+	moi->recoverAP();
+	moi->recoverAP();
+	moi->recoverAP();
+	moi->equip(w);
+	moi->attack(e);
 
     return 0; 
 }
