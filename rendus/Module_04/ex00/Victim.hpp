@@ -16,7 +16,7 @@ class Victim {
     Victim(Victim const &tocopy);
     Victim &operator=(const Victim &tocopy);
     std::string const &getName(void) const;
-    void getPolymorphed() const;
+    virtual void getPolymorphed() const;
 
 };
 
