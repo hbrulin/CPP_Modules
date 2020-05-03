@@ -25,14 +25,10 @@ int main()
 	std::cout << "*** Copy assignation ***" << std::endl;
 	ISpaceMarine* bob1 = new TacticalMarine;
     ISpaceMarine* jim1 = new AssaultTerminator;
-	ISpaceMarine* jeff = new AssaultTerminator;
     ISquad* vlc1 = new Squad;
     vlc1->push(bob1);
     vlc1->push(jim1);
 	ISquad* vlc2 = new Squad(*vlc1);
-	ISquad *vlc3 = new Squad;
-	vlc3->push(jeff);
-	vlc3 = vlc1;
 	std::cout << std::endl;
 	for (int i = 0; i < vlc2->getCount(); ++i) 
     {
@@ -42,17 +38,27 @@ int main()
         cur->meleeAttack();
     }
 	std::cout << std::endl;
-	for (int i = 0; i < vlc3->getCount(); ++i) 
+	delete vlc1;
+	delete vlc2;
+	
+	std::cout << std::endl;
+	std::cout << "*** Operateur affectation ***" << std::endl;
+	ISpaceMarine* joe = new TacticalMarine;
+    ISpaceMarine* jack = new AssaultTerminator;
+	ISpaceMarine* jeff = new AssaultTerminator;
+    Squad squad;
+    squad.push(joe);
+    squad.push(jack);
+	Squad squad2;
+	squad2.push(jeff);
+	squad2 = squad;
+	std::cout << std::endl;
+	for (int i = 0; i < squad2.getCount(); ++i) 
     {
-        ISpaceMarine* cur = vlc3->getUnit(i); 
+        ISpaceMarine* cur = squad2.getUnit(i); 
         cur->battleCry(); 
         cur->rangedAttack(); 
         cur->meleeAttack();
     }
-	std::cout << std::endl;
-	delete vlc1;
-	delete vlc2;
-	delete vlc3;
-
     return 0; 
 }
