@@ -47,6 +47,11 @@ int main()
 	me->use(1, *bill);
 	std::cout << std::endl;
 
+	std::cout << "*** Unknown type ***" << std::endl;
+	temp = source->createMateria("blabla");
+	std::cout << temp << std::endl;
+	std::cout << std::endl;
+
 	std::cout << "*** Deep copy constructor ***" << std::endl;
 	Character* me2 = new Character(*me);
 	me2->use(0, *bill);  
