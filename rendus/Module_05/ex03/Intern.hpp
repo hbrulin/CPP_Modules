@@ -18,7 +18,7 @@ class Intern
         struct forms
         {
             std::string name;
-            Form *(*fn)(std::string target); //ptr sur ft
+            Form *(*fn)(std::string target);
         };
         static const forms ftab[3];
 
