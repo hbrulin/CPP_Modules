@@ -26,7 +26,7 @@ Base *generate()
 {
     int i = rand() % 3;
     if (i == 0)
-        return new A; //je n'utilise pas les constructeurs ici
+        return new A;
     if (i == 1)
         return new B;
     return new C;
@@ -34,6 +34,7 @@ Base *generate()
 
 int main()
 {
+	srand(time(NULL));
     std::cout << "Identify from pointer : " << std::endl;
     for (int i = 0; i < 5; i++)
     {
