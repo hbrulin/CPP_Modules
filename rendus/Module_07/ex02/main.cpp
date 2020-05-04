@@ -4,6 +4,7 @@
 
 int main(void)
 {
+	srand(time(NULL));
 	Array<int> int_arr(3);
 
 	for (size_t i = 0; i < int_arr.size(); i++)
@@ -40,5 +41,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	Array<int> empty;
+	std::cout << empty.size() << std::endl;
 	return (0);
 }

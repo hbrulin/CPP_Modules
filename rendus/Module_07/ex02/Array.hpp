@@ -7,14 +7,14 @@ template <typename T>
 class Array {
 
 	public:
-		Array(); //constructeur vide
+		Array();
 		Array(unsigned int n);
 		~Array();
        	Array(const Array &tocopy);
         Array &operator=(Array const &tocopy);
 		unsigned int size();
 		T &operator[](unsigned int i);
-        T const &operator[](unsigned int i) const; //si on passe du const
+        T const &operator[](unsigned int i) const;
 
 		class OutOfBoundException: public std::exception
         {
