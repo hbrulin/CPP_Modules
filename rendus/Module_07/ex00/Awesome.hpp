@@ -6,7 +6,6 @@
 class Awesome {
 
 	public:
-	Awesome() : _n(0) {}
 	Awesome( int n ) : _n( n ) {}
 	
 	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
