@@ -8,11 +8,7 @@ class Awesome {
 	public:
 	Awesome() : _n(0) {}
 	Awesome( int n ) : _n( n ) {}
-	Awesome &operator=(Awesome &tocopy) { 
-		this->_n = tocopy.get_n(); 
-		return *this;
-	}
-
+	
 	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
 	bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
 	bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
