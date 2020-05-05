@@ -12,6 +12,20 @@ or will overwrite some adjacent memory.
 const double MAX = static_cast<double>(INT_MAX);
 const double MIN = static_cast<double>(INT_MIN);
 
+int	get_precision(std::string s)
+{
+	int i = 0;
+	int ret = 0;
+	while (s[i] != '.')
+		i++;
+	while (s[i])
+	{
+		ret++;
+		i++;
+	}
+	return (ret - 1);
+}
+
 void convFloat(std::string arg)
 {
     char *p;
@@ -36,8 +50,8 @@ void convFloat(std::string arg)
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: -nanf" << std::endl;
-        std::cout << "double: -nan" << std::endl;
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
         return;
     }
     float f = static_cast<float>(strtod(tmp, &p));
@@ -53,8 +67,8 @@ void convFloat(std::string arg)
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-        std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(get_precision(arg)) << f << "f" << std::endl;
+        std::cout << "double: " << std::fixed << std::setprecision(get_precision(arg)) << d << std::endl;
         return;
     }
     if (isprint(c))
@@ -62,8 +76,8 @@ void convFloat(std::string arg)
     else
         std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << i << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;    
+    std::cout << "float: " << std::fixed << std::setprecision(get_precision(arg)) << f << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(get_precision(arg)) << d << std::endl;    
 }
 
 void convDouble(std::string arg)
@@ -90,8 +104,8 @@ void convDouble(std::string arg)
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: -nanf" << std::endl;
-        std::cout << "double: -nan" << std::endl;
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
         return;
     }
 	/* Convert string to double */
@@ -108,8 +122,8 @@ void convDouble(std::string arg)
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-        std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(get_precision(arg)) << f << "f" << std::endl;
+        std::cout << "double: " << std::fixed << std::setprecision(get_precision(arg)) << d << std::endl;
         return;
     }
     if (isprint(c))
@@ -117,8 +131,8 @@ void convDouble(std::string arg)
     else
         std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << i << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;    
+    std::cout << "float: " << f << "f" << std::endl;
+    std::cout << "double: " << d << std::endl;    
 }
 
 void convInt(std::string arg)
@@ -178,9 +192,9 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	std::string arg = argv[1];
-    if (arg.size() > 1 && arg[arg.size() - 1] == 'f' && arg != "+inf" && arg != "-inf")
+    if (arg.size() > 1 && arg[arg.size() - 1] == 'f' && arg != "+inf" && arg != "-inf" && arg != "inf")
         convFloat(arg);
-    else if (isDouble(arg.c_str()) || arg == "+inf" || arg == "-inf" || arg == "nan")
+    else if (isDouble(arg.c_str()) || arg == "+inf" || arg == "-inf" || arg == "nan" || arg == "-nan" || arg == "inf")
         convDouble(arg);
     else if (arg.size() == 3 && arg[0] == '\'' && arg[2] == '\'')
         convChar(arg);
